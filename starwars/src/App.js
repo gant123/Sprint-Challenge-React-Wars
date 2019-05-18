@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import CardsContainer from "../src/components/CardsContainer.js";
 
 class App extends Component {
   constructor() {
@@ -32,7 +33,18 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1 className="Header">React Wars</h1>
+        <div className="container">
+          <h1 className="Header">React Wars</h1>
+          <CardsContainer characters={this.state.starwarsChars} />
+        </div>
+        <div
+          className="next"
+          onClick={() => {
+            this.getCharacters(this.state.nextURL);
+          }}
+        >
+          >
+        </div>
       </div>
     );
   }
